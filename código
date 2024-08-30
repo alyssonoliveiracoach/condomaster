@@ -1,0 +1,581 @@
+Estrutura do Projeto
+Classes Principais
+
+Morador
+Contrato
+Financeiro
+Condominio
+Main(classe p
+Requisitos
+
+Gerenciamento de Moradores: Cadastro, edição e exclusão.
+Gerenciamento de Contratos: Registro e atualização de contratos de locação.
+Gerenciamento Financeiro: Controle de pagamentos e taxas.
+Comunicação e Interface: Simples interface de linha de comando.
+código
+1. ClasseMorador
+Java
+
+Copiar código
+public class Morador {
+    private String nome;
+    
+    privat
+private String cpf;
+    private String endereco;
+    
+    p
+private String telefone;
+    
+    public Morador(String nome, String cpf, String endereco, String telefone) {
+        this.nome = nome;
+        this.cpf = cpf;
+        
+ 
+this.endereco = endereco;
+        
+        t
+this.telefone = telefone;
+    }
+    
+    // Getters e Setters
+    
+    publi
+public String getNome() {
+        
+        r
+return nome;
+    }
+    
+    
+    }
+    
+    pub
+public void setNome(String nome) {
+        
+       
+this.nome = nome;
+    }
+    
+    
+    }
+    
+    publ
+public String getCpf() {
+        return cpf;
+    }
+    
+    
+    }
+    
+    publ
+
+  
+public void setCpf(String cpf) {
+        
+       
+this.cpf = cpf;
+    }
+    
+    
+    }
+    
+    
+
+   
+public String getEndereco() {
+        
+        
+return endereco;
+    }
+    
+    
+    }
+    
+
+    
+public void setEndereco(String endereco) {
+        
+     
+this.endereco = endereco;
+    }
+    
+    
+    }
+    
+ 
+
+    }
+public String getTelefone() {
+        return telefone;
+    }
+    
+    
+    }
+    
+    pub
+public void setTelefone(String telefone) {
+        
+       
+
+   
+this.telefone = telefone;
+    }
+    
+    
+    }
+    
+@Override
+    
+  
+public String toString() {
+        
+        retu
+return "Morador{" +
+                
+               
+
+    
+"nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                
+             
+", endereco='" + endereco + '\'' +
+                
+          
+", telefone='" + telefone + '\'' +
+                
+          
+
+ 
+'}';
+    }
+}
+2. ClasseContrato
+Java
+
+Copiar código
+import java.util.Date;
+
+
+
+publi
+public class Contrato {
+    
+  
+private String idContrato;
+    private String cpfMorador;
+    private Date dataInicio;
+    
+    pr
+private Date dataFim;
+    private double valorMensal;
+    
+    
+    
+   
+public Contrato(String idContrato, String cpfMorador, Date dataInicio, Date dataFim, double valorMensal) {
+        
+        th
+this.idContrato = idContrato;
+        
+        th
+this.cpfMorador = cpfMorador;
+        
+   
+this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        
+   
+this.valorMensal = valorMensal;
+    }
+    
+    
+    }
+  
+// Getters e Setters
+    public String getIdContrato() {
+        
+        r
+return idContrato;
+    }
+    
+    
+   
+public void setIdContrato(String idContrato) {
+        
+ 
+this.idContrato = idContrato;
+    }
+    
+    
+    }
+public String getCpfMorador() {
+        
+        re
+return cpfMorador;
+    }
+    
+    
+    }
+    
+  
+public void setCpfMorador(String cpfMorador) {
+        
+        t
+this.cpfMorador = cpfMorador;
+    }
+    
+    
+ 
+public Date getDataInicio() {
+        return dataInicio;
+    }
+    
+    
+    }
+    
+    publ
+public void setDataInicio(Date dataInicio) {
+        
+      
+this.dataInicio = dataInicio;
+    }
+    
+    
+    }
+    
+    pu
+
+    
+public Date getDataFim() {
+        
+        ret
+return dataFim;
+    }
+    
+    
+    }
+    
+    pub
+public void setDataFim(Date dataFim) {
+        this.dataFim = dataFim;
+    }
+    
+    public double getValorMensal() {
+        
+        r
+return valorMensal;
+    }
+    
+    
+    }
+    
+
+  
+public void setValorMensal(double valorMensal) {
+        
+     
+this.valorMensal = valorMensal;
+    }
+    
+    
+    }
+    
+    @
+
+    }
+    
+ 
+
+    }
+ 
+@Override
+    
+    publ
+
+    p
+public String toString() {
+        return "Contrato{" +
+                "idContrato='" + idContrato + '\'' +
+                
+ 
+", cpfMorador='" + cpfMorador + '\'' +
+                ", dataInicio=" + dataInicio +
+                ", dataFim=" + dataFim +
+                ", valorMensal=" + valorMensal +
+                '}';
+    }
+}
+
+    }
+3. ClasseFinanceiro
+Java
+
+Copiar código
+public class Financeiro {
+    
+    priv
+private String idPagamento;
+    private String cpfMorador;
+    
+    privat
+private double valor;
+    private boolean pago;
+    
+    
+    
+    
+
+ 
+public Financeiro(String idPagamento, String cpfMorador, double valor, boolean pago) {
+        
+       
+this.idPagamento = idPagamento;
+        this.cpfMorador = cpfMorador;
+        
+      
+this.valor = valor;
+        
+        thi
+this.pago = pago;
+    }
+    
+    // Getters e Setters
+    public String getIdPagamento() {
+        return idPagamento;
+    }
+    
+    public void setIdPagamento(String idPagamento) {
+        this.idPagamento = idPagamento;
+    }
+    
+    public String getCpfMorador() {
+        
+        ret
+return cpfMorador;
+    }
+    
+    
+    }
+    
+   
+public void setCpfMorador(String cpfMorador) {
+        this.cpfMorador = cpfMorador;
+    }
+    
+    
+ 
+public double getValor() {
+        
+        retu
+return valor;
+    }
+    
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+    
+    public boolean isPago() {
+        
+        re
+return pago;
+    }
+    
+    
+    }
+    
+    pub
+public void setPago(boolean pago) {
+        this.pago = pago;
+    }
+    
+    @Override
+    public String toString() {
+        return "Financeiro{" +
+                "idPagamento='" + idPagamento + '\'' +
+                
+          
+", cpfMorador='" + cpfMorador + '\'' +
+                
+       
+", valor=" + valor +
+                ", pago=" + pago +
+                '}';
+    }
+}
+4. ClasseCondominio
+Java
+
+Copiar código
+import java.util.ArrayList;
+import java.util.List;
+
+public class Condominio {
+    private List<Morador> moradores;
+    
+ 
+private List<Contrato> contratos;
+    private List<Financeiro> pagamentos;
+    
+    public Condominio() {
+        this.moradores = new ArrayList<>();
+        this.contratos = new ArrayList<>();
+        this.pagamentos = new ArrayList<>();
+    }
+    
+    // Métodos para adicionar e gerenciar moradores, contratos e pagamentos
+    public void adicionarMorador(Morador morador) {
+        moradores.add(morador);
+    }
+    
+    
+        moradores.add(morador);
+    }
+    
+public void adicionarContrato(Contrato contrato) {
+        contratos.add(contrato);
+    }
+    
+    
+     
+public void adicionarPagamento(Financeiro financeiro) {
+        pagamentos.add(financeiro);
+    }
+    
+    
+        pagamentos.add(financeiro);
+   
+
+        pagamentos.add
+@Override
+    
+    pub
+public String toString() {
+        
+    
+return "Condominio{" +
+                
+            
+"moradores=" + moradores +
+                
+   
+", contratos=" + contratos +
+                ", pagamentos=" + pagamentos +
+                
+             
+
+   
+'}';
+    }
+}
+5. ClasseMain
+Java
+
+Copiar código
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
+
+publ
+public class Main {
+    public static void main(String[] args) {
+        
+        C
+Condominio condominio = new Condominio();
+        
+        
+        
+    
+// Adicionando um morador
+        
+        Morador mora
+Morador morador1 = new Morador("João Silva", "12345678900", "Rua das Flores, 123", "987654321");
+        condominio.adicionarMorador(morador1);
+        
+        
+        condominio.adicionarMorador(morador1);
+        
+   
+
+        condomi
+
+    
+// Adicionando um contrato
+        
+        Si
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        
+        Date data
+Date dataInicio = null;
+        Date dataFim = null;
+        try {
+            dataInicio = sdf.parse(
+            d
+
+     
+"01/01/2024");
+            dataFim = sdf.parse(
+            dataFim = sdf.par
+
+            data
+"31/12/2024");
+        } 
+        
+catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+            e.printStackTrace();
+        }
+        Contrato co
+
+            e.printStackTrace();
+        }
+  
+
+            e.printStackTr
+
+           
+Contrato contrato1 = new Contrato("C001", "12345678900", dataInicio, dataFim, 1000.00);
+        condominio.adicionarContrato(contrato1);
+        
+        
+        condominio.adicionarContra
+
+        cond
+// Adicionando um pagamento
+        
+        Financeiro pagamen
+
+        F
+Financeiro pagamento1 = new Financeiro("P001", "12345678900", 1000.00, false);
+        condominio.adicionarPagamento(pagamento1);
+        
+        
+        condominio.adicionarPagamento(pagam
+
+        condominio.adicionarPagam
+
+        co
+// Exibindo os dados
+        System.out.println(condominio);
+    }
+}
+
+        System.out.println(condominio);
+    }
+}
+`
+
+        System.out.println(condomini
+
+        Syste
+Explicações
+Classe Morador: Representa os moradores do condomínio com informações pessoais básicas.
+Classe Contrato: Gerencia informações sobre os contratos de locação dos moradores.
+Classe Financeiro: Controla os pagamentos e taxas relacionados aos moradores.
+Classe Condominio: Armazena e gerencia listas de moradores, contratos e pagamentos.
+Classe Main: Serve como ponto de entrada do programa, onde o sistema é instanciado e testado.
